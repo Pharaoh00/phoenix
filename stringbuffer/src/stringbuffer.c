@@ -133,6 +133,24 @@ int compareStrings(StringBuffer *str1, StringBuffer *str2) {
     return 0;
 };
 
+/*
+    This implementation does nos return if one string is greater than other,
+    just return if one of them is different for another.
+*/
+ssize_t fastCompareStrings(StringBuffer *str1, StringBuffer *str2) {
+
+    if(str1 == NULL || str2 == NULL) return -1;
+
+    if(str1->length != str2->length) return 0;
+
+    for(int i = 0; i < str1->length; i++) {
+        if(str1->string[i] != str2->string[i]) return 0;
+    };
+
+    return 1;
+
+};
+
 // TODO: Handle utf-8 characters.
 int upperCaseString(StringBuffer *string) {
 
