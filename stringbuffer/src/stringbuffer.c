@@ -24,7 +24,10 @@ StringBuffer *initializeStringWithCharacters(char *str) {
     if(tmp == NULL) return NULL;
 
     tmp->string = (char*)malloc(str_length + 1);
-    if(tmp->string == NULL) return NULL;
+    if(tmp->string == NULL) {
+        free(tmp);
+        return NULL;
+    };
 
     memcpy(tmp->string, str, str_length);
     tmp->string[str_length] = '\0';
