@@ -140,7 +140,7 @@ int compareStrings(StringBuffer *str1, StringBuffer *str2) {
     This implementation does nos return if one string is greater than other,
     just return if one of them is different for another.
 */
-ssize_t fastCompareStrings(StringBuffer *str1, StringBuffer *str2) {
+int fastCompareStrings(StringBuffer *str1, StringBuffer *str2) {
 
     if(str1 == NULL || str2 == NULL) return -1;
 
@@ -258,7 +258,7 @@ int stringIsupperCase(StringBuffer *string) {
     return 1;
 };
 
-ssize_t findCharacter(char *ch, StringBuffer *string) {
+int findCharacter(char *ch, StringBuffer *string) {
 
     if(string == NULL || string->capacity == 0 || string->string == NULL || string->length == 0 || ch == NULL || ch[0] == '\0') return -1;
 
